@@ -4,7 +4,7 @@ int toplam, sayac, a, b;
 
  int main () {
 
-  printf("İstenilen değere kadar giden 2'şer sayı dizisi programı.\n");
+  printf("İstenilen değere kadar aritmetik arttırma yapan sayı dizisi programı.\n");
   printf("Lütfen dizinin bitmesini istediğiniz tahmini değeri giriniz:\n");
   scanf("%d", &a);
   printf("Dizinin kaçar artacağını giriniz:\n");
