@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int toplam;
+
+int main() {
+
+    toplam = 0;
+
+    printf("1'den 10'a kadar olan sayıların toplamı:\n");
+    toplam = toplam + 1;
+    toplam = toplam + 2;
+    toplam = toplam + 3;
+    toplam = toplam + 4;
+    toplam = toplam + 5;
+    toplam = toplam + 6;
+    toplam = toplam + 7;
+    toplam = toplam + 8;
+    toplam = toplam + 9;
+    toplam = toplam + 10;
+
+    printf("%d", toplam);
+    return 0;
+}
