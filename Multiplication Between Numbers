@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+int toplam1, toplam2;
+int sayac1, sayac2;
+int a, b;
+
+int main() {
+    printf("İki sayı arasındaki sayıların toplamını bulma programı\n");
+    printf("İlk sayıyı seçiniz:");
+    scanf("%d", &a);
+    printf("İkinci sayıyı seçiniz:");
+    scanf("%d", &b);
+
+    if (a < b) {
+        int toplam1=0;
+        while (a <= b) {
+            toplam1 = toplam1 + a;
+            a++;
+        }
+
+        printf("Sonucunuz: %d", toplam1);
+    }
+    else if (a > b) {
+        int toplam2=0;
+        while (b <= a) {
+            toplam2 = toplam2 + b;
+            b++;
+        }
+
+        printf("Sonucunuz: %d", toplam2);
+    }
+    else
+        printf("Sayıları eşit seçtiniz, tekrar deneyin.");
+    return 0;
+}
