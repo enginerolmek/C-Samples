@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int a, b, secim, sonuc, us, i, sonucus=1;
+float sonucbol;
+
+int main () {
+
+    printf("İlk sayıyı giriniz. (Üs alacaksanız sayı tabanı):\n");
+    scanf("%d", &a);
+    printf("İkinci sayıyı giriniz. (Üs alacaksanız üs sayısı):\n");
+    scanf("%d", &b);
+
+    printf("Hesap makinesine hoşgeldiniz.\n");
+    printf("Toplama için 1'i,\n");
+    printf("Çıkartma için 2'yi,\n");
+    printf("Çarpma için 3'ü,\n");
+    printf("Bölme için 4'ü,\n");
+    printf("İki sayı arasındaki sayıların toplamı için 5'i,\n");
+    printf("Üs almak için 6'yı tuşlayınız.\n");
+    scanf("%d", &secim);
+
+    switch (secim) {
+
+        case 1:
+            sonuc=a+b;
+            printf("%d", sonuc);
+            break;
+        case 2:
+            sonuc=a-b;
+            printf("%d", sonuc);
+            break;
+        case 3:
+            sonuc=a*b;
+            printf("%d", sonuc);
+            break;
+        case 4:
+            sonucbol=(float)a/(float)b;
+            printf("%f", sonucbol);
+            break;
+        case 5:
+            if (a < b) {
+                int toplam1=0;
+                while (a <= b) {
+                    toplam1 = toplam1 + a;
+                    a++;
+                }
+
+                printf("Sonucunuz: %d", toplam1);
+            }
+            else if (a > b) {
+                int toplam2=0;
+                while (b <= a) {
+                    toplam2 = toplam2 + b;
+                    b++;
+                }
+
+                printf("Sonucunuz: %d", toplam2);
+            }
+            else
+                printf("Sayıları eşit seçtiniz, tekrar deneyin.");
+
+            break;
+        case 6:
+            for (i = 0; i < b; i++)
+            sonucus = sonucus * a;
+            printf("%d", sonucus);
+        default:
+            break;
+    }
+    return 0;
+}
