@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int toplam, sayac, a;
+
+int main() {
+
+printf("Birden istenen bir sayıya kadar olan sayıların toplamı:\n");
+    printf("Lütfen 1'den büyük bir sayı giriniz:");
+    scanf("%d", &a);
+
+    int toplam=0;
+    int sayac=1;
+    while (sayac<=a) {
+        toplam = toplam + sayac;
+        sayac++;
+    }
+
+    printf("%d", toplam);
+
+    return 0;
+}
