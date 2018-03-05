@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int deger, a, b, sonuc, sonuc2, sonuc3, sonuc4;
+
+int main() {
+    printf("İlk sayıyı giriniz.\n");
+    scanf("%d", &a);
+    printf("İkinci sayıyı giriniz:\n");
+    scanf("%d", &b);
+    printf("Hesap makinesine hoşgeldiniz. İki değer arasında dört işlem yapabileceğiniz makinemizde 1 komutuyla toplama, 2 komutuyla çıkartma, 3 komutuyla çarpma ve 4 komutuyla bölme işlemi yapabilirsiniz. LÜtfen seçiniz:\n");
+    scanf("%d", &deger);
+
+    switch (deger) {
+
+        case 1:
+            sonuc = a + b;
+            printf(" %d\n", sonuc);
+            break;
+        case 2:
+            sonuc2 = a - b;
+            printf(" %d\n", sonuc2);
+            break;
+        case 3:
+            sonuc3 = a * b;
+            printf(" %d\n", sonuc3);
+            break;
+        case 4:
+            sonuc4 = a / b;
+            printf(" %d\n", sonuc4);
+            break;
+        default:
+            printf("Tanımlanmamış bir değer girdiniz.");
+    }
+            return 0;
+
+}
