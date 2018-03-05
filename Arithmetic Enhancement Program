@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int toplam, sayac, a, b;
+
+ int main () {
+
+  printf("İstenilen değere kadar giden 2'şer sayı dizisi programı.\n");
+  printf("Lütfen dizinin bitmesini istediğiniz tahmini değeri giriniz:\n");
+  scanf("%d", &a);
+  printf("Dizinin kaçar artacağını giriniz:\n");
+  scanf("%d", &b);
+
+  int toplam=0;
+  int sayac=1;
+  while (toplam<=a) {
+   printf("%d\n", toplam = toplam + sayac*b);
+  }
+  return 0;
+ }
