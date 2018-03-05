@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  int girilen_sayi, toplam = 0;
+
+    while (girilen_sayi != 0) {
+        printf("Bir sayı giriniz:\n");
+        scanf("%d", &girilen_sayi);
+        toplam += girilen_sayi;
+    }
+        printf("%d\n", toplam);
+    return 0;
+}
