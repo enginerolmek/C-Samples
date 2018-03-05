@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int a, b, sonuc;
+
+int main (){
+
+printf("Çıkartma programına hoşgeldiniz. Çıkartılacak sayıyı ilk, çıkanı ikinci girmeyi unutmayınız. Lütfen ilk sayıyı giriniz:\n");
+scanf("%d", &a);
+printf("İkinci sayıyı giriniz.\n");
+scanf("%d", &b);
+
+if( a > b ){
+sonuc = a - b;
+printf("%d", sonuc);
+}
+else if( a < b ){
+printf("Sonuç eksili çıkacaktır, programı tekrar başlatınız.");
+}
+else {
+    printf("Sonuç 0");
+}
+return 0;
+}
