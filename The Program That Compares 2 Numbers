@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int a, b;
+
+int main() {
+    printf("İki sayının birbirine eşit olup olmadığını gösteren program.\n");
+    printf("Lütfen birinci sayıyı giriniz.\n");
+    scanf("%d", &a);
+    printf("İkinci sayıyı giriniz\n");
+    scanf("%d", &b);
+
+    if (a==b) {
+        printf("İki sayı birbirine eşittir.");
+    }
+    else if (a!=b) {
+        printf("İki sayı birbirine eşit değildir.");
+    }
+    else {
+        printf("Sayı dışında bir girdi girdiniz.");
+    }
+    return 0;
+}
