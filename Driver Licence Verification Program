@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main () {
+    int yas;
+
+
+    printf("Ehliyet alma yaşını belirleme programı.Lütfen yaşınızı giriniz:\n");
+    scanf("%d", &yas);
+
+    if (yas<18){
+    printf("Yaşınız ehliyet almak için uygun değildir.");
+    }
+    else if (yas>=18) {
+        printf("Ehliyet alabilecek yaştasınız.");
+    }
+    else {
+        printf("Tanımsız bir girdi girdiniz.");
+    }
+    return 0;
+}
