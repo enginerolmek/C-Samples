@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int gun;
+
+int main() {
+    printf("Haftanın bir gününü, Pazartesi ile başlayan bir haftada kaçıncı gün olduğunu sayı değeri olarak yazınız.\n");
+    scanf("%d", &gun);
+
+    switch (gun) {
+
+        case 1:
+            printf("Pazartesi, hafta içi\n");
+            break;
+        case 2:
+            printf("Salı, hafta içi\n");
+            break;
+        case 3:
+            printf("Çarşamba, hafta içi\n");
+            break;
+        case 4:
+            printf("Perşembe, hafta içi\n");
+            break;
+        case 5:
+            printf("Cuma, hafta içi\n");
+            break;
+        case 6:
+            printf("Cumartesi, hafta sonu\n");
+            break;
+        case 7:
+            printf("Pazar, hafta sonu\n");
+            break;
+        default:
+            printf("Bir haftada 7'den fazla gün yoktur.\n");
+            break;
+    }
+    return 0;
+}
