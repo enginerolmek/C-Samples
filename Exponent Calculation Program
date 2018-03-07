@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int a;
+
+int main() {
+
+    printf("Girilen sayıların karelerini bulma programı.\n");
+    printf("Programdan çıkmak için 0 girmeniz yeterlidir.\n");
+
+    do {
+        printf("Bir sayı giriniz:\n");
+        scanf("%d", &a);
+        if (a == 0)
+            break;
+        printf("Sayının karesi:%d \n\n", (a*a));
+    } while (a != 0);
+    return 0;
+}
