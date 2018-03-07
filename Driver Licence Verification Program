@@ -7,7 +7,7 @@ int main () {
     printf("Ehliyet alma yaşını belirleme programı.Lütfen yaşınızı giriniz:\n");
     scanf("%d", &yas);
 
-    if (yas<18){
+    if (yas<18) {
     printf("Yaşınız ehliyet almak için uygun değildir.");
     }
     else if (yas>=18) {
