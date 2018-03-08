@@ -2,7 +2,6 @@
 #include <math.h>
 
 int toplam1, toplam2;
-int sayac1, sayac2;
 int a, b;
 
 int main() {
