@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float a, b, c, x1, x2, delta;
+
+int main() {
+
+printf("*Ikinci derece denklem koklerini bulma programi-\n");
+printf("Olmayan degerler icin katsayiyi 0 giriniz.\n");
+printf("Lutfen ikinci dereceden elemanin katsayisini giriniz:\n");
+scanf("%f", &a);
+printf("Lutfen birinci dereceden elemanin katsayisini giriniz:\n");
+scanf("%f", &b);
+printf("Lutfen denklemin son degerini giriniz:\n");
+scanf("%f", &c);
+
+delta=b*b-4*a*c;
+
+if (delta>0) {
+float x1 = (-b/2*a + sqrt(b*b-4*a*c)/2*a)*-1;
+float x2 = (-b/2*a - sqrt(b*b-4*a*c)/2*a)*-1;
+printf("Iki reel kok vardir. Kokleriniz x1: %0.2f x2: %0.2f", x1, x2);
+}
+
+else if (delta==0) {
+float x1 = (-b/2*a + sqrt(b*b-4*a*c)/2*a)*-1;
+float x2 = (-b/2*a - sqrt(b*b-4*a*c)/2*a)*-1;
+printf("Tek bir reel kok vardir. Kokler x1-> %0.2f = x2-> %0.2f", x1, x2);
+}
+else {
+printf("Reel kok yoktur.");
+}
+return 0;
+}
