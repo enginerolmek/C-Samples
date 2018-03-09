@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+float a;
+
+int main()
+{
+    printf("-Girilen sayinin faktoriyelini bulan program-\n");
+    printf("-Degerinizi bulduktan sonra cikmak icin herhangi bir tusa basiniz.-\n");
+    printf("Lutfen sayiyi giriniz:\n");
+    scanf("%f", &a);
+
+    float sonuc=1;
+
+    while (a>0) {
+        sonuc=sonuc*a;
+        a--;
+    }
+    printf("Sonucunuz: %0.0f\n", sonuc);
+    getch();
+    return 0;
+}
