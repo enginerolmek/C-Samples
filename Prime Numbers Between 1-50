@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int a, b, sayi;
+int sayac=0;
+
+int main() {
+    printf("1-50 Arasindaki Asal Sayilar:\n");
+
+    for (a=2; a<=50; a++) {
+        sayi= 0;
+    for(b=2; b<=a/2; b++){
+        if (a%b==0) {
+            sayi=1;
+            break;
+        }
+    }
+     if(sayi == 0){
+                printf("%d\t", a);
+                sayac++;
+            }}
+    return 0;
+    }
