@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int x, y, r, sayi;
+int sayac=0;
+
+int main() {
+    printf("-Klavyeden girilen iki sayı arasındaki asal sayıları bulma programı (Sadece pozitif değer giriniz.)-\n");
+    printf("İlk sayıyı giriniz:\n");
+    scanf("%d", &x);
+    printf("İkinci sayıyı giriniz:\n");
+    scanf("%d", &y);
+
+    if (x<y) {
+    for (x; x<=y; x++) {
+        sayi= 0;
+        for(r=2; r<=x/2; r++){
+            if (x%r==0) {
+                sayi=1;
+                break;
+            }
+        }
+        if(sayi == 0){
+            printf("%d\t", x);
+            sayac++;
+        }}}
+    else if (y<x) {
+        for (y; y<=x; y++) {
+            sayi= 0;
+            for(r=2; r<=y/2; r++){
+                if (y%r==0) {
+                    sayi=1;
+                    break;
+                }
+            }
+            if(sayi == 0){
+                printf("%d\t", y);
+                sayac++;
+            }}
+    }
+    else
+    printf("İki sayıyı eşit girdiniz, ya da tanımsız değer(ler) girdiniz.");
+    return 0;
+}
