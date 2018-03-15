@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int a, b, sayac1, sayac2;
+
+int main() {
+    printf("-İki sayının aralarında asal olup olmadığını bulma programı-\n");
+    printf("Birinci sayıyı giriniz:\n");
+    scanf("%d", &a);
+    printf("İkinci sayıyı giriniz:\n");
+    scanf("%d", &b);
+    
+    /*Kod henüz bitmemiştir, ufak hatalar içermektedir.*/
+    /*This code is not finished yet. It contains some errors.*/
+
+    for (int i = 1; i < a; i++) {
+        if (a % i == 0) {
+            sayac1++;
+        } else if (a % i == 1) {
+            break;
+        }
+    }
+    for (int v = 1; v < b; v++) {
+        if (b %v == 0) {
+            sayac2++;
+        } else if (b % v == 1){
+            break;
+        }
+    }
+
+    if (sayac1 == sayac2) {
+        printf("Girilen sayılar aralarında asaldır.\n");
+    }
+        else if (sayac1 != sayac2) {
+        printf("Girilen sayılar aralarında asal değildir.\n");
+    }
+        return 0;
+} 
