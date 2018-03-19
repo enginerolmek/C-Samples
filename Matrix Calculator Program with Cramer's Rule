@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int sonuc, a, b, c, d, e, f;
+
+int main() {
+    int karematris[3][3];
+
+    for (int i=0; i<3; ++i)
+    {
+        for (int j=0; j<3; ++j)
+        {
+            printf("Kare matrisin elemanlarini sirayla giriniz.\n");
+            scanf("%d", &karematris[i][j]);
+        }}
+
+    a=(karematris[0][0]*karematris[1][1]*karematris[2][2]);
+    b=(karematris[1][0]*karematris[2][1]*karematris[0][2]);
+    c=(karematris[2][0]*karematris[0][1]*karematris[1][2]);
+    d=(karematris[0][2]*karematris[1][1]*karematris[2][0]);
+    e=(karematris[1][2]*karematris[2][1]*karematris[0][0]);
+    f=(karematris[2][2]*karematris[0][1]*karematris[1][0]);
+
+    sonuc=(a+b+c)-(d+e+f);
+
+    printf("Sonucunuz: %d", sonuc);
+
+        return 0;
+}
