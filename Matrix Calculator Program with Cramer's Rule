@@ -9,7 +9,7 @@ int main() {
     {
         for (int j=0; j<3; ++j)
         {
-            printf("Kare matrisin elemanlarini sirayla giriniz.\n");
+            printf("3x3 Kare matrisin %dx%d elemanini giriniz.\n", i+1, j+1);
             scanf("%d", &karematris[i][j]);
         }}
 
@@ -24,5 +24,5 @@ int main() {
 
     printf("Sonucunuz: %d", sonuc);
 
-        return 0;
+    return 0;
 }
