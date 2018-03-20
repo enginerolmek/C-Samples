@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+float sonuc;
+float matris[2][2];
+int i, j;
+
+int main() {
+    printf("--2x2 Matris Determinanti Hesaplama--\n");
+
+    for (i=0; i<2; i++) {
+        for (j=0; j<2; j++) {
+            printf("Lutfen matrisin %dx%d degerini girin:", i+1, j+1);
+            scanf("%f", &matris[i][j]);
+        }
+    }
+
+    sonuc= ((matris[0][0]*matris[1][1]) - (matris[0][1]*matris[1][0]));
+
+    printf("Matrisiniz:\n");
+    for (i=0; i<2; i++) {
+        for (j=0; j<2; j++) {
+            printf("%4.1f", matris[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Bu matrisin determinanti: %.1f", sonuc);
+return 0;
+}
