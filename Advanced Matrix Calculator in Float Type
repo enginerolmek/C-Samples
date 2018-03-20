@@ -1,0 +1,111 @@
+#include <stdio.h>
+
+int secim;
+float dizisonuc[3][3];
+float dizisonuc1[3][3];
+float dizisonuc2[3][3];
+float dizisonuc3[3][3];
+float matrisbir[3][3];
+float matrisiki[3][3];
+int i, j, k;
+
+int main() {
+
+    printf("Matrisler 3x3 formatinda olmalidir!\n");
+
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<3; j++) {
+            printf("Birinci matrisin %dx%d elemanini giriniz.\n", i+1, j+1);
+            scanf("%f", &matrisbir[i][j]);
+        }}
+
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<3; j++) {
+            printf("İkinci matrisin %dx%d elemanini giriniz.\n", i+1, j+1);
+            scanf("%f", &matrisiki[i][j]);
+        }}
+
+    printf("Birinci matrisiniz:\n");
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            printf(" %40.2f", matrisbir[i][j]);
+        }
+        printf("\n");
+    }
+    printf("İkinci matrisiniz:\n");
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            printf("%40.2f", matrisiki[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("--Matrislerle hesap makinesi--\n");
+    printf("-İki matrisi toplamak icin 1\n");
+    printf("-İki matrisi cıkartmak icin 2\n");
+    printf("İki matrisi carpmak iin 3\n");
+    printf("İki matrisi bolmek icin 4\n");
+    printf("giriniz.\n");
+    scanf("%d", &secim);
+
+    switch (secim) {
+        case 1:
+            for (i=0; i<3; i++) {
+                for (j=0; j<3; j++) {
+                    dizisonuc[i][j]= matrisbir[i][j] + matrisiki[i][j];
+                }
+            }
+            printf("Sonucunuz:\n");
+            for(i=0; i<3; i++)
+            {
+                for(j=0; j<3; j++) {
+                    printf("%40.2f", dizisonuc[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        case 2:
+            for (i=0; i<3; i++) {
+                for (j=0; j<3; j++) {
+                    dizisonuc1[i][j]= matrisbir[i][j] - matrisiki[i][j];
+                }
+            }
+            printf("Sonucunuz:\n");
+            for(i=0; i<3; i++)
+            {
+                for(j=0; j<3; j++) {
+                    printf("%40.2f", dizisonuc1[i][j]);
+                }
+                printf("\n");
+            }
+        case 3:
+            printf("Sonucunuz:\n");
+            for(i=0; i<3; i++){
+                for(j=0; j<3; j++){
+                    for(k=0; k<3; k++){
+                        dizisonuc2[i][j] += matrisbir[i][k] * matrisiki[k][j];
+                    }
+                    printf("%40.2f", dizisonuc2[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        case 4:
+            for (i=0; i<3; i++) {
+                for (j=0; j<3; j++) {
+                    dizisonuc3[i][j]= matrisbir[i][j]/matrisiki[i][j];
+                }
+            }
+            printf("Sonucunuz:\n");
+            for (i=0; i<3; i++) {
+                for (j=0; j<3; j++){
+                    printf("%40.2f", dizisonuc3[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        default:
+            printf("Tanımlanmamış bir seçenek girdiniz.\n");
+    }
+    return 0;
+}
