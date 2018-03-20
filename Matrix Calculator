@@ -1,0 +1,82 @@
+#include <stdio.h>
+
+int secim;
+int dizisonuc[3][3];
+int dizisonuc1[3][3];
+int matrisbir[3][3];
+int matrisiki[3][3];
+int i, j;
+
+int main() {
+
+    printf("Matrisler 3x3 formatinda olmalidir!\n");
+
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<3; j++) {
+            printf("Birinci matrisin %dx%d elemanini giriniz.\n", i+1, j+1);
+            scanf("%d", &matrisbir[i][j]);
+        }}
+
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<3; j++) {
+            printf("İkinci matrisin %dx%d elemanini giriniz.\n", i+1, j+1);
+            scanf("%d", &matrisiki[i][j]);
+        }}
+
+    printf("Birinci matrisiniz:\n");
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            printf(" %4d", matrisbir[i][j]);
+        }
+        printf("\n");
+    }
+    printf("İkinci matrisiniz:\n");
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            printf("%4d", matrisiki[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("--Matrislerle hesap makinesi--\n");
+    printf("-İki matrisi toplamak icin 1\n");
+    printf("-İki matrisi cıkartmak icin 2\n");
+    printf("giriniz.\n");
+    scanf("%d", &secim);
+
+    switch (secim) {
+        case 1:
+            for (i=0; i<3; i++) {
+                for (j=0; j<3; j++) {
+                    dizisonuc[i][j]= matrisbir[i][j] + matrisiki[i][j];
+                }
+            }
+            printf("Sonuc:\n");
+            for(i=0; i<3; i++)
+            {
+                for(j=0; j<3; j++) {
+                    printf("%4d", dizisonuc[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        case 2:
+            for (i=0; i<3; i++) {
+                for (j=0; j<3; j++) {
+                    dizisonuc1[i][j]= matrisbir[i][j] - matrisiki[i][j];
+                }
+            }
+            printf("Sonuc:\n");
+            for(i=0; i<3; i++)
+            {
+                for(j=0; j<3; j++) {
+                    printf("%4d", dizisonuc1[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        default:
+            printf("Tanımlanmamış bir seçenek girdiniz.\n");
+    }
+    return 0;
+}
