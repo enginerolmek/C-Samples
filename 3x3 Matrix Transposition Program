@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int secimmatris[3][3];
+int yenimatris[3][3];
+int i, j;
+
+int main() {
+    printf("-Matrisin transpozesini bulma:\n");
+
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            printf("Matrisin %dx%d elemanini giriniz:\n", i+1, j+1);
+            scanf("%d", &secimmatris[i][j]);
+        }
+    }
+
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            yenimatris[i][j] = secimmatris[j][i];
+        }}
+
+    printf("Matrisiniz:\n");
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            printf("%3d", secimmatris[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Matrisinizin transpozesi:\n");
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            printf("%3d", yenimatris[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
