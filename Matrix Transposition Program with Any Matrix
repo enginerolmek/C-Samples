@@ -1,0 +1,87 @@
+#include <stdio.h>
+
+int secimmatris[100][100];
+int yenimatris[100][100];
+int dizimatris[100][100];
+int satirmatris[100][100];
+int i, j;
+int a, b;
+
+int main() {
+    printf("-Matrisin transpozesini bulma:\n");
+
+    printf("Matrisinizin satir sayisini giriniz:\n");
+    scanf("%d", &a);
+    printf("Matrisinizin sutun sayisini giriniz:\n");
+    scanf("%d", &b);
+
+    for (i = 0; i < a; i++) {
+        for (j = 0; j < b; j++) {
+            printf("Matrisin %dx%d elemanini giriniz:\n", i + 1, j + 1);
+            scanf("%d", &secimmatris[i][j]);
+        }
+    }
+
+    if (a > b) {
+        for (i = 0; i < a; i++) {
+            for (j = 0; j < b; j++) {
+                dizimatris[j][i] = secimmatris[i][j];
+            }
+        }
+        printf("Matrisiniz:\n");
+        for (i = 0; i<a; i++) {
+            for (j = 0; j<b; j++) {
+                printf("%3d", secimmatris[i][j]);
+            }
+            printf("\n");
+        }
+        printf("Matrisinizin transpozesi:");
+        for (i=0; i<a; i++) {
+            for (j = 0; j<b; j++) {
+                printf("%3d", dizimatris[j][i]);
+            }
+        }}
+    else if (a==b) {
+        for (i = 0; i < a; i++) {
+            for (j = 0; j < b; j++) {
+                yenimatris[i][j] = secimmatris[j][i];
+            }
+        }
+
+        printf("Matrisiniz:\n");
+        for (i = 0; i < a; i++) {
+            for (j = 0; j < b; j++) {
+                printf("%3d", secimmatris[i][j]);
+            }
+            printf("\n");
+        }
+        printf("Matrisinizin transpozesi:\n");
+        for (i = 0; i < a; i++) {
+            for (j = 0; j < b; j++) {
+                printf("%3d", yenimatris[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    else if (a<b) {
+        for (i = 0; i < b; i++) {
+            for (j = 0; j < a; j++) {
+                satirmatris[i][j] = secimmatris[j][i];
+            }
+        }
+        printf("Matrisiniz:\n");
+        for (i = 0; i<a; i++) {
+            for (j = 0; j<b; j++) {
+                printf("%3d", secimmatris[i][j]);
+            }
+            printf("\n");
+        }
+        printf("Matrisinizin transpozesi:\n");
+        for (i=0; i<b; i++) {
+            for (j = 0; j<a; j++) {
+                printf("%3d", satirmatris[i][j]);
+            }
+            printf("\n");
+        }}
+    return 0;
+}
