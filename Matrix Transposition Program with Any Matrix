@@ -23,8 +23,8 @@ int main() {
     }
 
     if (a > b) {
-        for (i = 0; i < a; i++) {
-            for (j = 0; j < b; j++) {
+        for (i = 0; i<a; i++) {
+            for (j = 0; j<b; j++) {
                 dizimatris[j][i] = secimmatris[i][j];
             }
         }
@@ -35,11 +35,12 @@ int main() {
             }
             printf("\n");
         }
-        printf("Matrisinizin transpozesi:");
-        for (i=0; i<a; i++) {
-            for (j = 0; j<b; j++) {
+        printf("Matrisinizin transpozesi:\n");
+        for (j=0; j<b; j++) {
+            for (i=0; i<a; i++) {
                 printf("%3d", dizimatris[j][i]);
             }
+            printf("\n");
         }}
     else if (a==b) {
         for (i = 0; i < a; i++) {
@@ -78,7 +79,7 @@ int main() {
         }
         printf("Matrisinizin transpozesi:\n");
         for (i=0; i<b; i++) {
-            for (j = 0; j<a; j++) {
+            for (j=0; j<a; j++) {
                 printf("%3d", satirmatris[i][j]);
             }
             printf("\n");
