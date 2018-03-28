@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <mem.h>
 
-int dizi1[15];
-int dizi2[15];
-int toplamdizi[15];
-int cikartmadizi[15];
-int xdizi[15];
-int boldizi[15];
+float dizi1[15];
+float dizi2[15];
+float toplamdizi[15];
+float cikartmadizi[15];
+float xdizi[15];
+float boldizi[15];
 int secim;
 int sayac1=1;
 int sayac2=1;
@@ -15,13 +14,13 @@ int main() {
     printf("-Iki Dizi Arasinda Hesap Makinesi-\n");
 
     for (int i=0; i<15; i++) {
-            printf("Lutfen birinci dizinin %d. elemanini giriniz:\n", sayac1++);
-            scanf("%d", &dizi1[i]);
-        }
+        printf("Lutfen birinci dizinin %d. elemanini giriniz:\n", sayac1++);
+        scanf("%f", &dizi1[i]);
+    }
 
     for (int i=0; i<15; i++) {
         printf("Lutfen ikinci dizinin %d. elemanini giriniz:\n", sayac2++);
-        scanf("%d", &dizi2[i]);
+        scanf("%f", &dizi2[i]);
     }
 
     printf("Iki dizinin karsilikli elemanlarini toplamak icin 1'e;\n");
@@ -34,81 +33,80 @@ int main() {
         case 1:
             printf("Birinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi1[i]);
+                printf("%4.2f", dizi1[i]);
             }
             printf("\n");
 
             printf("Ikinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi2[i]);
+                printf("%4.2f", dizi2[i]);
             }
             printf("\n");
 
             printf("Toplam Sonucu Yeni Diziniz:\n");
             for (int i=0; i<15; i++) {
                 toplamdizi[i] = dizi1[i] + dizi2[i];
-                printf("%4d", toplamdizi[i]);
+                printf("%4.2f", toplamdizi[i]);
             }
             printf("\n");
             break;
         case 2:
             printf("Birinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi1[i]);
+                printf("%4.2f", dizi1[i]);
             }
             printf("\n");
 
             printf("Ikinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi2[i]);
+                printf("%4.2f", dizi2[i]);
             }
             printf("\n");
 
             printf("Cikartma Sonucu Yeni Diziniz:\n");
             for (int i=0; i<15; i++) {
                 cikartmadizi[i] = dizi1[i] - dizi2[i];
-                printf("%4d", cikartmadizi[i]);
+                printf("%4.2f", cikartmadizi[i]);
             }
             printf("\n");
-            break;
             break;
         case 3:
             printf("Birinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi1[i]);
+                printf("%4.2f", dizi1[i]);
             }
             printf("\n");
 
             printf("Ikinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi2[i]);
+                printf("%4.2f", dizi2[i]);
             }
             printf("\n");
 
             printf("Carpma Sonucu Yeni Diziniz:\n");
             for (int i=0; i<15; i++) {
                 xdizi[i] = dizi1[i] * dizi2[i];
-                printf("%4d", xdizi[i]);
+                printf("%4.2f", xdizi[i]);
             }
             printf("\n");
             break;
-            case 4:
+        case 4:
             printf("Birinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi1[i]);
+                printf("%8.2f", dizi1[i]);
             }
             printf("\n");
 
             printf("Ikinci Diziniz:\n");
             for (int i=0; i<15; i++) {
-                printf("%4d", dizi2[i]);
+                printf("%8.2f", dizi2[i]);
             }
             printf("\n");
 
             printf("Bolme Sonucu Yeni Diziniz:\n");
             for (int i=0; i<15; i++) {
                 boldizi[i] = dizi1[i] / dizi2[i];
-                printf("%4d", boldizi[i]);
+                printf("%.2f\n", boldizi[i]);
             }
             printf("\n");
             break;
@@ -116,5 +114,5 @@ int main() {
             printf("Yanlis bir giris yaptiniz!\n");
             break;
     }
-return 0;
+    return 0;
 }
