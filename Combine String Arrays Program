@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <mem.h>
+
+char dizi1[90000];
+char dizi2[90000];
+int x, y, z, t;
+
+int main () {
+    printf("Iki diziyi uc uca ekleme programi:\n");
+    printf("Ilk diziyi giriniz:\n");
+    gets(dizi1);
+    printf("Ikinci diziyi giriniz:\n");
+    gets(dizi2);
+
+    strcat(dizi1,dizi2);
+    puts(dizi1);
+
+    return 0;
+}
