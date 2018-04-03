@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int a, b, c;
+
+int main() {
+    printf("Klavyeden Girilen Iki Sayi Arasinda Istenen Ardisik Sayilari Bulma Programi:\n");
+    printf("Ilk aralik degerini giriniz:\n");
+    scanf("%d", &a);
+    printf("Ikinci aralik degerini giriniz:\n");
+    scanf("%d", &b);
+    printf("Artis ya da azalis miktarini giriniz:\n");
+    scanf("%d", &c);
+
+    if (a<b) {
+    for (a; a<=b; a++) {
+        if (a % c != 0)
+            continue;
+        printf("%6d", a);
+    }}
+    else if (a>b) {
+        for (a; b<=a; a--) {
+            if (a % c != 0)
+                continue;
+            printf("%6d", a);
+    }}
+    else {
+        printf("Iki sayiyi esit girdiniz!\n");
+    }
+    return 0;
+    }
