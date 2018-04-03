@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+float sayi, us, sonuc=1;
+
+int main() {
+    printf("Ustu alinacak sayiyi giriniz:\n");
+    scanf("%f", &sayi);
+    printf("Sayinin kuvvetini giriniz:{\n");
+    scanf("%f", &us);
+
+    for (int i=0; i<us; i++) {
+        sonuc=sonuc*sayi;
+    }
+printf("Sonucunuz: %.0f", sonuc);
+return 0;
+}
