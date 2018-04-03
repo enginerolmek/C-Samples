@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <mem.h>
+
+char dizi1[90000];
+char dizi2[90000];
+int secim;
+
+int main () {
+
+    printf("Ilk diziyi giriniz:\n");
+    gets(dizi1);
+    printf("Ikinci diziyi giriniz:\n");
+    gets(dizi2);
+
+    printf("----------Iki Dizi Arasinda Islemler----------\n");
+    printf("Iki diziyi uc uca eklemek icin 1:\n");
+    printf("Iki dizinin karakter sayilarinin toplami icin 2:\n");
+    printf("Iki diziyi karsilastirmak icin 3:\n");
+    printf("------------giriniz.------------\n");
+    scanf("%d", &secim);
+
+    switch (secim) {
+        case 1:
+            strcat(dizi1,dizi2);
+            puts(dizi1);
+            break;
+        case 2:
+            printf("Birinci dizinin karakter sayisi: %d\n", strlen(dizi1));
+            printf("Ikinci dizinin karakter sayisi: %d\n", strlen(dizi2));
+            printf("Toplam karakter sayisi: %d\n", strlen(dizi1)+strlen(dizi2));
+        break;
+        case 3:
+            if (strcmp(dizi1,dizi2)==0) {
+                printf("Iki dizi birbirinin aynisidir.\n");
+            }
+            else if (strcmp(dizi1,dizi2)>0) {
+                printf("Birinci dizinin ASCII sayisi daha fazladir.\n");
+            }
+            else if (strcmp(dizi1,dizi2)<0) {
+                printf("Ikinci dizinin ASCII sayisi daha fazladir.\n");
+            }
+            break;
+        default:
+            printf("Tanimlanmamis bir deger girdiniz!\n");
+            break;
+    }
+    return 0;
+}
