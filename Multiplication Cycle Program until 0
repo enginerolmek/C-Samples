@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int x;
+int carpim=1;
+
+int main() {
+    printf("0 Girilene Kadar Girilen Sayilari Carpma\n");
+
+    do {
+        printf("Bir sayi giriniz:\n");
+        scanf("%d", &x);
+        if (x==0)
+            break;
+        carpim=carpim*x;
+        printf("Su an sonucunuz: %d\n", carpim);
+    } while (x!=0);
+    printf("Son sonucunuz: %d", carpim);
+    return 0;
+}
