@@ -1,0 +1,148 @@
+#include <stdio.h>
+
+int secim;
+
+float k;
+float tekdizi[9000];
+
+float m;
+float ciftdizi[9000];
+
+float x;
+int sayac=1;
+float fibo[9000];
+
+float y;
+float ucgendizi[9000];
+
+float z;
+float karedizi[9000];
+
+float a, b, c;
+float ardisikdizi[9000];
+
+int main() {
+    printf("Sayi Dizileri Yazdirma Programina Hosgeldiniz!\n");
+
+    printf("Tek Sayi Dizisi Icin 1:\n");
+    printf("Cift Sayi Dizisi Icin 2:\n");
+    printf("Fibonacci Dizisi Icin 3:\n");
+    printf("Ucgensel Dizi Icin 4:\n");
+    printf("Karesel Dizi Icin 5:\n");
+    printf("Aritmetik Dizi Icin 6:\n");
+    printf("tuslayiniz...\n");
+    scanf("\n%d", &secim);
+
+    switch (secim) {
+        case 1:
+            printf("Tek Sayi Dizisinin Kac Eleman Devam Edecegini Belirleyiniz:\n");
+            scanf("%f", &k);
+
+            for (int i=2; i<=k; i++) {
+                tekdizi[0]=1;
+                tekdizi[1]=3;
+                tekdizi[i]=i+i+1;
+            }
+
+            printf("Diziniz:\n");
+            for (int i=0; i<=k-1; i++) {
+                printf("%5.0f", tekdizi[i]);
+            }
+            break;
+        case 2:
+            printf("Cift Sayi Dizisinin Kac Eleman Devam Edecegini Belirleyiniz:\n");
+            scanf("%f", &m);
+
+            for (int i=0; i<=m; i++) {
+                ciftdizi[i]=i*2;
+            }
+
+            printf("Diziniz:\n");
+            for (int i=0; i<=m-1; i++) {
+                printf("%5.0f", ciftdizi[i]);
+            }
+            break;
+        case 3:
+            printf("Fibonacci Sayi Dizisinin Kac Eleman Devam Edecegini Belirleyiniz:\n");
+            scanf("%f", &x);
+
+            fibo[0]=1;
+            fibo[1]=1;
+
+            for (int i=2; i<=x; i++) {
+                fibo[i]=fibo[i-1]+fibo[i-2];
+                sayac++;
+            }
+
+            printf("Diziniz:\n");
+            for (int i=0; i<=sayac-1; i++) {
+                printf("%8.0f", fibo[i]);
+            }
+            break;
+        case 4:
+            printf("Ucgensel Sayi Dizisinin Kac Eleman Devam Edecegini Belirleyiniz:\n");
+            scanf("%f", &y);
+
+            for (int i=1; i<=y; i++) {
+                ucgendizi[0]=1;
+                ucgendizi[i]=(i+1)*(i+2)/2;
+            }
+
+            printf("Diziniz:\n");
+            for (int i=0; i<=y; i++) {
+                printf("%5.0f", ucgendizi[i]);
+            }
+            break;
+        case 5:
+            printf("Karesel Sayi Dizisinin Kac Eleman Devam Edecegini Belirleyiniz:\n");
+            scanf("%f", &z);
+
+            for (int i=1; i<=z; i++) {
+                karedizi[0]=1;
+                karedizi[i]=(i+1)*(i+1);
+            }
+
+            printf("Diziniz:\n");
+            for (int i=0; i<=z-1; i++) {
+                printf("%5.0f", karedizi[i]);
+            }
+            break;
+        case 6:
+            printf("Lutfen dizinin baslangic degerini giriniz:\n");
+            scanf("%f", &a);
+            printf("Lutfen dizinin bitis degerini giriniz:\n");
+            scanf("%f", &b);
+            printf("Dizinin ardisik azalma ya da artma miktarini giriniz:\n");
+            scanf("%f", &c);
+
+            if (a<b) {
+                for (int i=0; i<=b; i++) {
+                    ardisikdizi[0]=a;
+                    ardisikdizi[i]=a+c*(i);
+                }
+                float tsayi=(b-a)/c+1;
+
+                printf("Diziniz:\n");
+                for (int i=0; i<=tsayi-1; i++) {
+                   printf("%5.0f", ardisikdizi[i]);
+                }
+            }
+            else if (a>b) {
+                for (int i=0; i<=b; i++) {
+                    ardisikdizi[0]=a;
+                    ardisikdizi[i]=a-c*(i);
+                }
+                float tsayi=(a-b)/c+1;
+
+                printf("Diziniz:\n");
+                for (int i=0; i<=tsayi-1; i++) {
+                    printf("%5.0f", ardisikdizi[i]);
+                }
+            }
+            else {
+                printf("İki sayiyi esit girdiniz, cevap sadece: %f", a);
+            }
+            break;
+    }
+return 0;
+}
