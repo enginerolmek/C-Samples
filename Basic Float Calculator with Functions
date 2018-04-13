@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int secim;
+float x, y;
+float topsonuc, ciksonuc, carpsonuc, bolsonuc;
+
+float toplama (float x, float y) {
+    float tsonuc=x+y;
+    return tsonuc;
+}
+
+float cikartma (float x, float y) {
+    float csonuc = x - y;
+    return csonuc;
+}
+
+float carpma (float x, float y) {
+    float casonuc = x * y;
+    return casonuc;
+}
+
+float bolme (float x, float y) {
+    float bsonuc = x / y;
+    return bsonuc;
+}
+
+int main() {
+    printf("Ilk sayiyi giriniz:\n");
+    scanf("%f", &x);
+    printf("Ikinci sayiyi giriniz:\n");
+    scanf("%f", &y);
+    printf("Fonksiyonlarla Float Tipinde Hesap Makinesi!\n");
+    printf("Toplama icin 1:\n");
+    printf("Cikartma icin 2:\n");
+    printf("Carpma icin 3:\n");
+    printf("Bolme icin 4:\n");
+    printf("tuslayiniz.\n");
+    scanf("%d", &secim);
+
+    switch (secim) {
+        case 1:
+            topsonuc = toplama(x, y);
+            printf("Sonucunuz: %.2f\n", topsonuc);
+            break;
+        case 2:
+            ciksonuc = cikartma(x, y);
+            printf("Sonucunuz: %.2f\n", ciksonuc);
+            break;
+        case 3:
+            carpsonuc=carpma(x, y);
+            printf("Sonucunuz: %.2f\n", carpsonuc);
+            break;
+        case 4:
+            bolsonuc=bolme(x, y);
+            printf("Sonucunuz: %.2f", bolsonuc);
+            break;
+        default:
+            printf("Tanimsiz girdi!\n");
+            break;
+    }
+    return 0;
+}
