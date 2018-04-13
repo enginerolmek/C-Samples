@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+float karesonuc;
+float sayi;
+
+float fkareal (float sayi) {
+    float fsonuc = sayi * sayi;
+    return fsonuc;
+}
+
+int main() {
+    printf("0 Girilene Kadar Girilen Sayilarin Karesi:\n");
+    printf("Programdan cikmak icin 0 giriniz:\n");
+
+    do {
+        printf("\nBir sayi giriniz:\n");
+        scanf("%f", &sayi);
+        karesonuc=fkareal(sayi);
+        printf("%.2f", karesonuc);
+    } while (sayi!=0);
+
+    return 0;
+}
