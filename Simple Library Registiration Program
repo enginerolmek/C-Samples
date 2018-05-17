@@ -24,7 +24,6 @@ int kitapgir (int n, ...) {
 
     fprintf(ka, "Adi:\tYazari:\tDili:\tBasim Yili:\tCilt No:\n");
 
-
     va_list ap;
 
     va_start(ap, n);
@@ -41,9 +40,9 @@ int kitapgir (int n, ...) {
 
             puts("Lutfen kitabin basim yilini ve kacinci cilt oldugunu aralarinda bosluk birakarak giriniz:\n");
             scanf("%d %d", &kitapbilgi.basimyil, &kitapbilgi.cilt);
-        }
 
-    fprintf(ka, "%s\t%s\t%s\t%d\t%d", kitapbilgi.ad, kitapbilgi.yazar, kitapbilgi.dil, kitapbilgi.basimyil, kitapbilgi.cilt);
+            fprintf(ka, "%s\t%s\t%s\t%d\t%d\n", kitapbilgi.ad, kitapbilgi.yazar, kitapbilgi.dil, kitapbilgi.basimyil, kitapbilgi.cilt);
+        }
 
     va_end(ap);
 
