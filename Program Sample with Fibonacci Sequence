@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int fibodizi[20];
+int a;
+int artis;
+
+int main() {
+    printf("Fibonacci Sayi Dizisinde Tam Bolunen Sayilari Bulma:\n");
+    printf("Dizi Kacinci Elemana Kadar Devam Etsin?\n");
+    scanf("%d", &a);
+    printf("Elemanlar Kaca Tam Bolunebilsin?\n");
+    scanf("%d", &artis);
+
+
+    for (int i=0; i<a; i++) {
+        fibodizi[0]=1;
+        fibodizi[1]=1;
+        fibodizi[i]=fibodizi[i-1]+fibodizi[i-2];
+    }
+
+    for (int i=0; i<a; i++) {
+        if (fibodizi[i] % artis == 0)
+            printf("%4d", fibodizi[i]);
+        else
+            continue;
+    }
+
+    return 0;
+}
