@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+char metin[900];
+char harf;
+int sayac=0;
+
+
+int main() {
+    printf("Bir metin giriniz:\n");
+    gets(metin);
+
+    printf("Arayacaginiz harfi giriniz:\n");
+    scanf("%c", &harf);
+
+    for (int i = 0; metin[i] != '\0'; i++) {
+        if (metin[i] == harf)
+            sayac++;
+    }
+
+    printf("Metinde gecen %c sayisi: %d", harf, sayac);
+
+    return 0;
+}
+
