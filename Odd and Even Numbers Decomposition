@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int sayi;
+int denemedizi[100];
+int ciftdizi[100];
+int tekdizi[100];
+int sayaca=0;
+int sayacb=0;
+
+int main() {
+    printf("Kac elemanli bir dizi gireceksiniz?\n");
+    scanf("%d", &sayi);
+
+    for (int i = 0; i < sayi; i++) {
+        printf("Dizinizi giriniz:\n");
+        scanf("%d", &denemedizi[i]);
+    }
+
+    for (int i = 0; i < sayi; i++) {
+        if (denemedizi[i] % 2 == 0) {
+            ciftdizi[i] = denemedizi[i];
+            sayaca++;
+        } else if(denemedizi[i] % 2 != 0)
+            continue;
+    }
+
+    for (int i = 0; i < sayi; i++) {
+        if (denemedizi[i] % 2 == 1) {
+            tekdizi[i] = denemedizi[i];
+            sayacb++;
+        } else if(denemedizi[i] % 2 != 1)
+            continue;
+    }
+
+    printf("Cift diziniz:\n");
+    for (int k = 0; k < sayi; k++) {
+        if (ciftdizi[k]!=0)
+        printf("%3d", ciftdizi[k]);
+        else
+            continue;
+    }
+
+    printf("\nTek diziniz:\n");
+    for (int l = 0; l < sayi; l++) {
+        if (tekdizi[l]!=0)
+        printf("%3d", tekdizi[l]);
+        else
+            continue;
+    }
+
+    return 0;
+}
