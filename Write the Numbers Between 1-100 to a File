@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int dizi[100];
+
+int main() {
+
+    FILE *dg;
+    dg = fopen("1-100 Arasi Sayilar.txt", "w");
+
+    for (int i = 0; i <= 100; i++) {
+        dizi[1] = 1;
+        dizi[i] = dizi[i - 1] + 1;
+    }
+
+    for (int i = 1; i <= 100; i++) {
+        fprintf(dg, "Dizinizin %d. elemani: %d\n", i, dizi[i]);
+}
+
+    fclose(dg);
+
+    return 0;
+}
