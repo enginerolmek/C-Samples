@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <conio.h>
+
+int i;
+char secim;
+
+int main () {
+    printf("Kare matrisin boyutunu giriniz, tek boyut yeterlidir:\n");
+    scanf("%d", &i);
+
+    printf("Kare matrisin icine yazdirmak istediginiz karakter?\n");
+    printf("(*, #, herhangi bir rakam)\n");
+    scanf("%s", &secim);
+
+    switch (secim) {
+        case '*':
+            for (int k = 0; k < i; k++) {
+                for (int m = 0; m < i; m++) {
+                    printf("*\t");
+                }
+                printf("\n");
+            }
+            break;
+        case '#':
+            for (int k = 0; k < i; k++) {
+                for (int m = 0; m < i; m++) {
+                    printf("#\t");
+                }
+                printf("\n");
+            }
+            break;
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            for (int k = 0; k < i; k++) {
+                for (int m = 0; m < i; m++) {
+                    printf("%c\t", secim);
+                }
+                printf("\n");
+            }
+            break;
+        default:
+            printf("Bu karakterle olusturulamaz.\n");
+            break;
+    }
+
+   return 0;
+}
