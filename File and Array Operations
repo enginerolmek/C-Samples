@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int dizi[500];
+int baslangic, bitis, artis;
+
+int main() {
+
+    printf("--Sadece Pozitif Diziler--\n");
+    printf("Baslangic degerini giriniz:\n");
+    scanf("%d", &baslangic);
+    printf("Bitis degerini giriniz:\n");
+    scanf("%d", &bitis);
+    printf("Artis-azalis miktarini giriniz:\n");
+    scanf("%d", &artis);
+
+    int arasonuc1 = ((bitis-baslangic)/artis)+1;
+    int arasonuc2 = ((baslangic-bitis)/artis)+1;
+
+    FILE *dg;
+    dg = fopen("SayiDiziniz.txt", "w");
+
+    if (baslangic<bitis) {
+        for (int i = 0; i <= arasonuc1; i++) {
+            dizi[1] = baslangic;
+            dizi[i] = dizi[i - 1] + artis;
+        }
+        for (int i = 1; i <= arasonuc1; i++) {
+            fprintf(dg, "Dizinizin %d. elemani: %d\n", i, dizi[i]);
+        }
+    }
+    else if (bitis<baslangic) {
+        for (int i = 0; i <= arasonuc2; i++) {
+            dizi[1] = baslangic;
+            dizi[i] = dizi[i - 1] - artis;
+        }
+        for (int i = 1; i <= arasonuc2; i++) {
+            fprintf(dg, "Dizinizin %d. elemani: %d\n", i, dizi[i]);
+        }
+    }
+
+    fclose(dg);
+
+    return 0;
+}
