@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+char seckarakter;
+
+struct {
+    char nickname[30];
+    int can;
+    int girhamle;
+} oyuncu1;
+
+struct {
+    char nickname[30];
+    int can;
+    int girhamle;
+} oyuncu2;
+
+void oyunoyna() {
+    puts("BASLA!");
+    oyuncu1.can = 100, oyuncu2.can = 100;
+    int tekme=5, yumruk=10;
+
+    while (oyuncu1.can > 0 && oyuncu2.can > 0) {
+        puts("Birinci oyuncu sayi gir:");
+        scanf("%d", &oyuncu1.girhamle);
+        puts("Ikinci oyuncu sayi gir:");
+        scanf("%d", &oyuncu2.girhamle);
+
+        if (oyuncu1.girhamle>oyuncu2.girhamle && oyuncu1.girhamle%2==0) {
+            oyuncu2.can = oyuncu2.can - yumruk;
+            printf("%s'den sert bir yumruk! %s can: %d | %s can: %d\n\a", oyuncu1.nickname, oyuncu1.nickname, oyuncu1.can,
+                   oyuncu2.nickname, oyuncu2.can);
+        }
+        else if (oyuncu1.girhamle>oyuncu2.girhamle && oyuncu1.girhamle%2==1) {
+            oyuncu2.can = oyuncu2.can - tekme;
+            printf("%s'den bir tekme! %s can: %d | %s can: %d\n\a", oyuncu1.nickname, oyuncu1.nickname, oyuncu1.can,
+                   oyuncu2.nickname, oyuncu2.can);
+        }
+        else if (oyuncu2.girhamle>oyuncu1.girhamle && oyuncu2.girhamle%2==0) {
+            oyuncu1.can = oyuncu1.can - yumruk;
+            printf("%s'den sert bir yumruk! %s can: %d | %s can: %d\n\a", oyuncu2.nickname, oyuncu1.nickname, oyuncu1.can,
+                   oyuncu2.nickname, oyuncu2.can);
+        }
+        else if (oyuncu2.girhamle>oyuncu1.girhamle && oyuncu2.girhamle%2==1) {
+            oyuncu1.can = oyuncu1.can - tekme;
+            printf("%s'den bir tekme! %s can: %d | %s can: %d\n\a", oyuncu2.nickname, oyuncu1.nickname, oyuncu1.can,
+                   oyuncu2.nickname, oyuncu2.can);
+        }
+    }
+
+    if (oyuncu1.can!=0) {
+        printf("%s kazandi, tebrikler!", oyuncu1.nickname);
+    }
+    else if (oyuncu2.can!=0) {
+        printf("%s kazandi, tebrikler!", oyuncu2.nickname);
+    }
+}
+
+int main() {
+    puts("Oyuna hosgeldiniz!\n");
+    puts("Birinci oyuncu adini gir:");
+    gets(oyuncu1.nickname);
+    puts("Ikinci oyuncu adini gir:");
+    gets(oyuncu2.nickname);
+
+    oyunoyna();
+
+    fflush(stdin);
+    system("cls");
+
+    printf("\nTekrar oynamak ister misiniz? E/H\n");
+    scanf("%c", &seckarakter);
+
+    switch (seckarakter) {
+        case 'E':
+        case 'e':
+            return main();
+        default:
+            puts("Oynadiginiz icin tesekkurler!");
+      break;
+    }
+
+    getch();
+    return 0;
+}
