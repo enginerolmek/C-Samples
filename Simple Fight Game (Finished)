@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <time.h>
 
 char seckarakter;
+int vssec;
 
 struct {
     char nickname[30];
@@ -16,7 +18,62 @@ struct {
     int girhamle;
 } oyuncu2;
 
+struct {
+    int can;
+    int girhamle;
+}pc;
+
+void pcileoyna() {
+    fflush(stdin);
+
+    puts("Nickname'inizi giriniz:\n");
+    gets(oyuncu1.nickname);
+
+    puts("BASLA!");
+    oyuncu1.can = 100, pc.can = 100;
+    int tekme=5, yumruk=10;
+
+    while (oyuncu1.can > 0 && pc.can > 0) {
+        puts("Birinci oyuncu sayi gir:");
+        scanf("%d", &oyuncu1.girhamle);
+
+        pc.girhamle=0+rand()%100+0;
+
+        if (oyuncu1.girhamle>pc.girhamle && oyuncu1.girhamle%2==0) {
+            pc.can = pc.can - yumruk;
+            printf("%s'den sert bir yumruk! %s can: %d | PC can: %d\n\a", oyuncu1.nickname, oyuncu1.nickname, oyuncu1.can, pc.can);
+        }
+        else if (oyuncu1.girhamle>pc.girhamle && oyuncu1.girhamle%2==1) {
+            pc.can = pc.can - tekme;
+            printf("%s'den bir tekme! %s can: %d | PC can: %d\n\a", oyuncu1.nickname, oyuncu1.nickname, oyuncu1.can, pc.can);
+        }
+        else if (pc.girhamle>oyuncu1.girhamle && pc.girhamle%2==0) {
+            oyuncu1.can = oyuncu1.can - yumruk;
+            printf("PC'den sert bir yumruk! %s can: %d | PC can: %d\n\a", oyuncu1.nickname, oyuncu1.can, pc.can);
+        }
+        else if (pc.girhamle>oyuncu1.girhamle && pc.girhamle%2==1) {
+            oyuncu1.can = oyuncu1.can - tekme;
+            printf("PC'den bir tekme! %s can: %d | PC can: %d\n\a", oyuncu1.nickname, oyuncu1.can, pc.can);
+        }
+    }
+
+    if (oyuncu1.can<=0) {
+        printf("PC kazandi, bir dahaki sefere!");
+    }
+    else if (pc.can<=0) {
+        printf("%s kazandin, tebrikler!", oyuncu1.nickname);
+    }
+}
+
 void oyunoyna() {
+    fflush(stdin);
+
+    puts("Oyuna hosgeldiniz!\n");
+    puts("Birinci oyuncu adini gir:");
+    gets(oyuncu1.nickname);
+    puts("Ikinci oyuncu adini gir:");
+    gets(oyuncu2.nickname);
+
     puts("BASLA!");
     oyuncu1.can = 100, oyuncu2.can = 100;
     int tekme=5, yumruk=10;
@@ -49,22 +106,29 @@ void oyunoyna() {
         }
     }
 
-    if (oyuncu1.can!=0) {
+    fflush(stdin);
+
+    if (oyuncu2.can<=0) {
         printf("%s kazandi, tebrikler!", oyuncu1.nickname);
     }
-    else if (oyuncu2.can!=0) {
+    else if (oyuncu2.can>0){
         printf("%s kazandi, tebrikler!", oyuncu2.nickname);
     }
 }
 
 int main() {
-    puts("Oyuna hosgeldiniz!\n");
-    puts("Birinci oyuncu adini gir:");
-    gets(oyuncu1.nickname);
-    puts("Ikinci oyuncu adini gir:");
-    gets(oyuncu2.nickname);
+    puts("PC'ye karsi icin 1 | 2 Oyuncu icin 2:");
+    scanf("%d", &vssec);
 
-    oyunoyna();
+    srand(time(0));
+
+    if (vssec==1) {
+        pcileoyna();
+    } else if (vssec==2) {
+        oyunoyna();
+    } else {
+        puts("Tanimsiz girdi, kapatiliyor.");
+    }
 
     fflush(stdin);
     system("cls");
@@ -81,6 +145,6 @@ int main() {
       break;
     }
 
-    getch();
+    system("pause");
     return 0;
 }
