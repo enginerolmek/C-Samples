@@ -10,13 +10,7 @@ struct {
     char nickname[30];
     int can;
     int girhamle;
-} oyuncu1;
-
-struct {
-    char nickname[30];
-    int can;
-    int girhamle;
-} oyuncu2;
+} oyuncu1, oyuncu2;
 
 struct {
     int can;
